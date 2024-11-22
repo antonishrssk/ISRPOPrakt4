@@ -1,0 +1,42 @@
+﻿<Window x:Class="Prakt4.Fractals.KochCurve"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Prakt4.Fractals"
+        mc:Ignorable="d"
+        Title="Кривая Коха"
+        SizeToContent="WidthAndHeight" ResizeMode="CanResize">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical"
+                    Grid.Column="0" HorizontalAlignment="Left" Margin="5">
+            <Label Content="Размер фрактала"/>
+            <TextBox x:Name="tbFractalSize" MaxLength="4"
+                     LostFocus="tbFractalSettings_LostFocus"/>
+            <Label Content="Количество итераций"/>
+            <TextBox x:Name="tbIterationsCount" MaxLength="1"
+                     LostFocus="tbFractalSettings_LostFocus"/>
+            <Separator Height="10"/>
+            <Label Content="Красный оттенок"/>
+            <TextBox x:Name="tbColorR" MaxLength="3"
+                     Text="0"
+                     LostFocus="tbFractalSettings_LostFocus"/>
+            <Label Content="Зеленый оттенок"/>
+            <TextBox x:Name="tbColorG" MaxLength="3"
+                     Text="0"
+                     LostFocus="tbFractalSettings_LostFocus"/>
+            <Label Content="Синий оттенок"/>
+            <TextBox x:Name="tbColorB" MaxLength="3"
+                     Text="0"
+                     LostFocus="tbFractalSettings_LostFocus"/>
+        </StackPanel>
+
+        <Canvas x:Name="canvas" Height="Auto" Width="Auto"
+                Grid.Column="1" VerticalAlignment="Top" Margin="5"/>
+    </Grid>
+</Window>
